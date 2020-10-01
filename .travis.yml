@@ -1,0 +1,9 @@
+sudo: required
+services:
+    - docker
+
+before-install:
+    - docker build -t nileshb83/dokcer-react -f Dockerfile.dev .
+
+script:
+    - docker run nileshb83/dokcer-react npm run test -- --coverage
